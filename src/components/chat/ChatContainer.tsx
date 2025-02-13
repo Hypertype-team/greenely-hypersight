@@ -55,7 +55,7 @@ How can I help you today?`,
 
     try {
       const { data, error } = await supabase.functions.invoke('analyze-tickets', {
-        body: { query: userMessage, chat_history: chatHistory }
+        body: { query: userMessage, conversationMemory: chatHistory, company: 'greenely' }
       });
 
       if (error) {
